@@ -1,0 +1,43 @@
+// -------------------------------- //
+//             Navigaton            //
+// -------------------------------- //
+.nav {
+    position: fixed;
+    top: 100px;
+    padding: 50px;
+    left: 0;
+    right: 0;
+    margin: 0;
+    width: auto;
+    height: auto;
+    display: block;
+    opacity: 1;
+    z-index: 14;
+    transition: all 0.3s cubic-bezier(1, 0.3, 0.4, 0.9);
+    transform: scale(0);
+    background: #ef9013;
+    &--active {
+        display: block;
+    }
+    &--opacity {
+        opacity: 1;
+        transform: scale(1);
+        .navigation__content .menu .menu-col .menu-item {
+            padding: 0 0 20px;
+        }
+    }
+    .nav__content {
+        .nav-wrapper {
+            margin: 0;
+            padding: 0;
+            .menu-col {
+                display: flex;
+                justify-content: space-between;
+                margin: 0;
+                .nav-item {
+
+                }
+            }
+        }
+    }
+}

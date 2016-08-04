@@ -1,0 +1,6 @@
+[[!$main-tpl.tabs]]
+[[!$main-tpl.cta]]
+[[!$main-tpl.gallery]]
+[[!$main-tpl.partners]]
+[[!$main-tpl.contacts]]
+[[!$main-tpl.javascript]]

@@ -1,0 +1,144 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding: 0 50px;
+    z-index: 15;
+    background: #fcfcfc;
+    .shadowZ(0);
+    .transition();
+    .header__content {
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+        height: 200px;
+        padding: 25px 0;
+        .transition();
+        .header__left {
+            display: flex;
+            align-items: center;
+            .header__logo {
+                background-image: url("/assets/components/frontend/images/global/logo.svg");
+                background-repeat: no-repeat;
+                background-position: left center;
+                background-size: 500px;
+                position: relative;
+                height: 100px;
+                width: 500px;
+                display: block;
+                text-decoration: none;
+                outline: 0;
+                .transition();
+            }
+        }
+        .header__right {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            .header__actions {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                height: 100%;
+                .header-act {
+                    display: flex;
+                    flex-direction: column;
+                    &--buttons {}
+                    //---------- Phone Numbers (header)
+                    &--phone-numbers {
+                        padding: 0 40px;
+                        .phone {
+                            margin: 0 0 10px;
+                            .transition();
+                            &__label {
+                                font-size: 14px;
+                                display: block;
+                                text-align: right;
+                                color: #7c818a;
+                                text-transform: uppercase;
+                                margin-bottom: 3px;
+                                .transition();
+
+                            }
+                            &__l {
+                                font-family: "Exo 2";
+                                text-align: right;
+                                text-decoration: none;
+                                color: #5d69dd;
+                                .transition();
+
+                                .phone__area-code {
+                                    color: #7c818a;
+                                    font-size: 20px;
+                                    .transition();
+
+                                }
+                                .phone__number {
+                                    color: #6b6b6b;
+                                    font-size: 28px;
+                                    .transition();
+
+                                }
+                            }
+                            &:hover {
+                                .phone__label {
+                                    color: darken(#7c818a, 10%);
+                                }
+                                .phone__l {
+
+                                    .phone__number {
+                                        color: @orange;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &--nav-toggle {
+                        border: none;
+                        padding: 0;
+                        .nav-toggle {
+                            padding: 95px 15px 96px;
+                            cursor: pointer;
+                            background: #ffffff;
+                            box-shadow: 0 -14px 15px -3px rgba(0, 0, 0, 0.15);
+                            .transition();
+                            .nav-toggle__bars {
+                                height: 30px;
+                                width: 45px;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-between;
+                                margin: 0 auto;
+                                padding: 0;
+                                .transition();
+                                .nav-toggle__bar {
+                                    height: 2px;
+                                    width: auto;
+                                    background: #d2d4d8;
+                                    .transition();
+                                }
+                            }
+                            .nav-toggle__label {
+                                margin: 20px auto 0;
+                                font-size: 16px;
+                                color: rgba(0, 0, 0, 0.64);
+                                .transition();
+                            }
+                            &:hover {
+                                .box-shadow( 0 -14px 25px -5px rgba(0, 0, 0, 0.3) );
+                                .nav-toggle__bar {
+                                    background: #8b8c8e;
+                                }
+                                .nav-toggle__label {
+                                    color: @orange;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

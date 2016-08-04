@@ -1,0 +1,165 @@
+
+@base-color: #EF9013;
+@white: #FFFFFF;
+@black: #000000;
+@gray: #EEE;
+@5D: #5d5d5d;
+@333: #5d5d5d;
+@grayBD: #BDBDBD;
+
+@darkgray: #565656; //Header colors
+
+@orange: @base-color;
+@red: #F44336;
+@green: #4CAF50;
+
+
+// dirs
+@images: "../images";
+@fonts: "../fonts";
+@logo: "@{images}/logo/logo.svg";
+
+/* |---------------------------| Mixins |---------------------------| */
+
+.br(@params) {
+    .border-radius(@params);
+}
+.border-radius(@params) {
+    -webkit-border-radius: @params;
+    -moz-border-radius: @params;
+    -ms-border-radius: @params;
+    -o-border-radius: @params;
+    border-radius: @params;
+}
+.box-shadow(@params) {
+    -webkit-box-shadow: @params;
+    -moz-box-shadow: @params;
+    -ms-box-shadow: @params;
+    -o-box-shadow: @params;
+    box-shadow: @params;
+}
+.transition(@params: all 0.3s linear) {
+    -webkit-transition: @params;
+    -moz-transition: @params;
+    -ms-transition: @params;
+    -o-transition: @params;
+    transition: @params;
+}
+.user-select(@params) {
+    -webkit-user-select: @params;
+    -moz-user-select: @params;
+    -ms-user-select: @params;
+    -o-user-select: @params;
+    user-select: @params;
+}
+.transform(@params) {
+    -webkit-transform: @params;
+    -moz-transform: @params;
+    -ms-transform: @params;
+    -o-transform: @params;
+    transform: @params;
+}
+.transform-style(@params) {
+    -webkit-transform-style: @params;
+    -moz-transform-style: @params;
+    -ms-transform-style: @params;
+    -o-transform-style: @params;
+    transform-style: @params;
+}
+.transform-origin(@params) {
+    -webkit-transform-origin: @params;
+    -moz-transform-origin: @params;
+    -ms-transform-origin: @params;
+    -o-transform-origin: @params;
+    transform-origin: @params;
+}
+.box-sizing(@params) {
+    -webkit-box-sizing: @params;
+    -moz-box-sizing: @params;
+    -ms-box-sizing: @params;
+    -o-box-sizing: @params;
+    box-sizing: @params;
+}
+.rotate(@angle) {
+    .transform( rotate(@angle) );
+}
+.scale(@x) {
+    .transform( scale(@x) );
+}
+.animation(@params) {
+    -webkit-animation: @params;
+    -moz-animation: @params;
+    -o-animation: @params;
+    animation: @params;
+}
+.appearance(@params) {
+    -webkit-appearance: @params;
+    -moz-appearance: @params;
+    appearance: @params;
+}
+.font-smoothing() {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-smooth: always;
+}
+.text-rendering(@params) {
+    -webkit-text-rendering: @params;
+    -moz-text-rendering: @params;
+    -ms-text-rendering: @params;
+    -o-text-rendering: @params;
+    text-rendering: @params;
+}
+.linear-gradient(@color1, @angle, @color2) {
+    background: mix(@color1, @color2, 50%);
+    background: -webkit-linear-gradient(@angle, @color1, @color2);
+    background: -moz-linear-gradient(@angle, @color1, @color2);
+    background: -ms-linear-gradient(@angle, @color1, @color2);
+    background: -o-linear-gradient(@angle, @color1, @color2);
+    background: linear-gradient(@angle, @color1, @color2);
+}
+.radial-gradient(@color1, @angle, @color2, @shape) {
+    background: mix(@color1, @color2, 50%);
+    background: -webkit-radial-gradient(@angle, @shape, @color1, @color2);
+    background: -moz-radial-gradient(@angle, @shape, @color1, @color2);
+    background: -ms-radial-gradient(@angle, @shape, @color1, @color2);
+    background: -o-radial-gradient(@angle, @shape, @color1, @color2);
+    background: radial-gradient(@angle, @shape, @color1, @color2);
+}
+.svg-filter(@id) {
+    -webkit-filter: url(@id);
+    -moz-filter: url(@id);
+    -ms-filter: url(@id);
+    -o-filter: url(@id);
+    filter: url(@id);
+}
+.filter(@filter) {
+    -webkit-filter: @filter;
+    -moz-filter: @filter;
+    -ms-filter: @filter;
+    -o-filter: @filter;
+    filter: @filter;
+}
+.resize(@param) {
+    -webkit-resize: @param;
+    -moz-resize: @param;
+    -ms-resize: @param;
+    -o-resize: @param;
+    resize: @param;
+}
+.shadowZ(@level:1) {
+    & when (@level = 1) {
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    }
+    & when (@level = 2) {
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    }
+    & when (@level = 3) {
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    }
+    & when (@level = 4) {
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    }
+    & when (@level = 5) {
+        box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    }
+}

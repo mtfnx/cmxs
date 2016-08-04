@@ -1,0 +1,95 @@
+// Material Input Styles
+.input-group {
+    position: relative;
+    margin-bottom: 40px;
+}
+.input-group input {
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #FAFAFA;
+    color: #FAFAFA;
+    background: transparent;
+    &:focus {
+        outline: none;
+    }
+}
+.input-group label {
+    //color: #999;
+    color: #ECEFF1;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    .transition();
+}
+/* active state */
+.input-group input:focus ~ .input-group label,
+.input-group input:valid ~ .input-group label {
+    top: -20px;
+    font-size: 14px;
+    color: @orange;
+}
+.input-group .bar {
+    position: relative;
+    display: block;
+    width: 100%;
+    &:after,
+    &:before {
+        content: '';
+        height: 3px;
+        width: 0;
+        bottom: 0;
+        position: absolute;
+        background: @orange;
+        .transition(all 0.3s linear);
+    }
+    &:before {
+        left: 50%;
+    }
+    &:after {
+        right: 50%;
+    }
+}
+/* active state */
+.input-group input:focus ~ .input-group .bar:after,
+.input-group input:focus ~ .input-group .bar:before {
+    width: 50%;
+}
+/* HIGHLIGHTER */
+.input-group .highlight {
+    position: absolute;
+    height: 60%;
+    width: 30%;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+.input-group span.tip {
+    font-size: 16px;
+    display: block;
+    padding: 7px 0;
+    opacity: 0.8;
+    line-height: 1.5;
+    color: #EEE;
+    font-weight: 300;
+    div {
+        font-weight: 400;
+        display: block;
+    }
+    a {
+        color: #439f48;
+        border-bottom: 1px solid rgba(67, 159, 72, 0.4);
+    }
+}
+/* active state */
+.input-group input:focus ~ .highlight {
+    -webkit-animation: inputHighlighter 0.3s ease;
+    -moz-animation: inputHighlighter 0.3s ease;
+    animation: inputHighlighter 0.3s ease;
+}
